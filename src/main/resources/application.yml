@@ -1,0 +1,52 @@
+#
+# Copyright (c) 2015 - 2016 SuperDream Inc. <http://www.superdream.me>
+#
+
+spring:
+  # 数据源配置
+  datasource:
+    driver-class-name: "com.mysql.jdbc.Driver"
+    url: "jdbc:mysql://localhost/demo?useUnicode=true&characterEncoding=utf8&useNewIO=true"
+    username: "root"
+#    password: "123456"
+
+    # HikariCP属性配置
+    hikari:
+      maximumPoolSize: 20
+      minimumIdle: 10
+      connectionTimeout: 30000
+      idleTimeout: 600000
+      maxLifetime: 1800000
+      connectionTestQuery: "select 1"
+      connectionInitSql: "set names utf8mb4"
+ # Http配置
+  http:
+    encoding:
+      charset: "UTF-8"
+      enabled: true
+      force: true
+  # MVC配置
+  mvc:
+    favicon:
+      enabled: false
+  # 静态资源配置
+  resources:
+    add-mappings: false
+
+#  redis:
+#    database: 0
+#    host: 192.168.137.128
+#    password:
+#    port: 6379
+#    pool:
+#      max-idle: 8
+#      min-idle: 0
+#      max-active: 10
+#      max-wait: -1
+mybatis:
+  mapperLocations: classpath*:com/feng/web/mapper/*/*.xml
+  typeAliasesPackage: com.feng.web.domain
+
+server:
+  port: 80
+
