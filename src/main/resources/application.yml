@@ -33,16 +33,25 @@ spring:
   resources:
     add-mappings: false
 
-#  redis:
-#    database: 0
-#    host: 192.168.137.128
-#    password:
-#    port: 6379
-#    pool:
-#      max-idle: 8
-#      min-idle: 0
-#      max-active: 10
-#      max-wait: -1
+  redis:
+# 集群配置
+#    cluster:
+#          nodes:
+#            - 192.168.0.17:6390
+#            - 192.168.0.17:6391
+#            - 192.168.0.17:6392
+#            - 192.168.0.9:6390
+#            - 192.168.0.9:6391
+#            - 192.168.0.9:6392
+    database: 0
+    host: 192.168.137.128
+    password:
+    port: 6379
+    pool:
+      max-idle: 8
+      min-idle: 0
+      max-active: 10
+      max-wait: -1
 mybatis:
   mapperLocations: classpath*:com/feng/web/mapper/*/*.xml
   typeAliasesPackage: com.feng.web.domain
