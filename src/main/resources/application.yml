@@ -29,6 +29,7 @@ spring:
   mvc:
     favicon:
       enabled: false
+
   # 静态资源配置
   resources:
     add-mappings: false
