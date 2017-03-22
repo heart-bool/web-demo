@@ -51,6 +51,7 @@
             <outputDirectory>conf</outputDirectory>
             <includes>
                 <include>application.yml</include>
+                <include>logback.xml</include>
             </includes>
         </fileSet>
     </fileSets>
