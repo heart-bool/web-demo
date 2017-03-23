@@ -1,5 +1,7 @@
 package com.feng.web.domain;
 
+import org.springframework.data.annotation.Transient;
+
 /**
  * Created by Administrator on 2017/3/11.
  */

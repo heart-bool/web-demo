@@ -57,6 +57,12 @@ mybatis:
   mapperLocations: classpath*:com/feng/web/mapper/*/*.xml
   typeAliasesPackage: com.feng.web.domain
 
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+
 server:
   port: 80
 

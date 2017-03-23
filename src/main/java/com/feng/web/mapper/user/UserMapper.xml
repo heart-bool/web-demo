@@ -6,4 +6,8 @@
         insert into
         user(name,age) values(#{name,jdbcType=VARCHAR},#{age,jdbcType=NUMERIC})
     </insert>
+
+    <select id="findAll" resultType="com.feng.web.domain.User">
+        SELECT * FROM user
+    </select>
 </mapper>
