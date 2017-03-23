@@ -16,7 +16,7 @@
         <logback.version>1.2.2</logback.version>
         <jodaTime.version>2.9.5</jodaTime.version>
         <spring.version>4.3.6.RELEASE</spring.version>
-        <spring.boot.version>1.5.0.RELEASE</spring.boot.version>
+        <spring.boot.version>1.5.1.RELEASE</spring.boot.version>
         <mybatis.spring.boot.version>1.2.0-SNAPSHOT</mybatis.spring.boot.version>
         <hikaricp.version>2.5.1</hikaricp.version>
         <mysql.version>5.1.40</mysql.version>
@@ -24,14 +24,6 @@
     </properties>
 
     <dependencies>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
@@ -184,6 +176,22 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-junit47</artifactId>
+                        <version>2.19.1</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
             </plugin>
         </plugins>
         <resources>
