@@ -34,6 +34,14 @@ spring:
   resources:
     add-mappings: true
 
+  jackson:
+    date-format: "YYYY-MM-dd HH:mm:ss"
+    jodaDateTimeFormat: "YYYY-MM-dd HH:mm:ss"
+    time-zone: Asia/Shanghai
+    serialization:
+      write_dates_as_timestamps: true
+
+
   redis:
 # 集群配置
 #    cluster:
