@@ -32,7 +32,7 @@ spring:
 
   # 静态资源配置
   resources:
-    add-mappings: false
+    add-mappings: true
 
   redis:
 # 集群配置

@@ -13,4 +13,6 @@ public interface UserMapper {
     void insert(User user);
 
     List<User> findAll();
+
+    List<User> findNull();
 }

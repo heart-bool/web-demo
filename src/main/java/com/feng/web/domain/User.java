@@ -1,6 +1,6 @@
 package com.feng.web.domain;
 
-import org.springframework.data.annotation.Transient;
+import org.joda.time.DateTime;
 
 /**
  * Created by Administrator on 2017/3/11.
@@ -9,6 +9,7 @@ public class User {
 
     private String name;
     private int age;
+    private DateTime createdAt;
 
     public String getName() {
         return name;
@@ -24,5 +25,13 @@ public class User {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public DateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(DateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }

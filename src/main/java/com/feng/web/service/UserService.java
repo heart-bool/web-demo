@@ -4,11 +4,14 @@ import com.feng.web.domain.User;
 import com.feng.web.mapper.user.UserMapper;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.google.common.collect.Maps;
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2017/3/11.
@@ -20,19 +23,31 @@ public class UserService {
     private UserMapper userMapper;
 
     public void insertUser() {
-        for (int i = 0; i < 10; i++) {
-            User user = new User();
-            user.setName("123"+i);
-            user.setAge(i);
-            userMapper.insert(user);
-        }
-
+        User user = new User();
+        user.setName("zhangsan");
+        user.setAge(33);
+        user.setCreatedAt(DateTime.now());
+        userMapper.insert(user);
     }
 
-    public List<User> findAll() {
-        Page page = PageHelper.startPage(1, 10);
+    public Page findAll() {
+        Page page = PageHelper.startPage(4, 10);
 
         userMapper.findAll();
         return page;
+    }
+
+    public HashMap<String, Object> findNull() {
+        Page page = PageHelper.startPage(1, 3);
+        List<User> users = userMapper.findNull();
+        HashMap<String, Object> map = Maps.newHashMap();
+        map.put("pageSize", page.getPageSize());
+        map.put("total", page.getTotal());
+        map.put("pageNum", page.getPageNum());
+        map.put("pages", page.getPages());
+        map.put("result", users);
+        users.forEach(user -> System.out.println(user.getCreatedAt()));
+
+        return map;
     }
 }
