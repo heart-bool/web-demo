@@ -4,6 +4,7 @@ import com.feng.web.domain.User;
 import com.feng.web.mapper.user.UserMapper;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.google.common.collect.Maps;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,11 +31,11 @@ public class UserService {
         userMapper.insert(user);
     }
 
-    public Page findAll() {
+    public PageInfo<List<User>> findAll() {
         Page page = PageHelper.startPage(4, 10);
 
         userMapper.findAll();
-        return page;
+        return page.toPageInfo();
     }
 
     public HashMap<String, Object> findNull() {

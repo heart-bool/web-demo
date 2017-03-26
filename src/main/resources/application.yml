@@ -8,7 +8,7 @@ spring:
     driver-class-name: "com.mysql.jdbc.Driver"
     url: "jdbc:mysql://localhost/demo?useUnicode=true&characterEncoding=utf8&useNewIO=true"
     username: "root"
-    password: "123123"
+    password: "123456"
 
     # HikariCP属性配置
     hikari:
@@ -34,12 +34,12 @@ spring:
   resources:
     add-mappings: true
 
-  jackson:
-    date-format: "YYYY-MM-dd HH:mm:ss"
-    jodaDateTimeFormat: "YYYY-MM-dd HH:mm:ss"
-    time-zone: Asia/Shanghai
-    serialization:
-      write_dates_as_timestamps: true
+#  jackson:
+#    date-format: "YYYY-MM-dd HH:mm:ss"
+#    jodaDateTimeFormat: "YYYY-MM-dd HH:mm:ss"
+#    time-zone: Asia/Shanghai
+#    serialization:
+#      write_dates_as_timestamps: true
 
 
   redis:

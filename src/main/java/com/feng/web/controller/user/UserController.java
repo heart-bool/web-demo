@@ -3,6 +3,7 @@ package com.feng.web.controller.user;
 import com.feng.web.domain.User;
 import com.feng.web.service.UserService;
 import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 import com.google.common.collect.Maps;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,15 +32,11 @@ public class UserController {
 
     @RequestMapping("all")
     @ResponseBody
-    public Map<String, Object> getAll() {
+    public PageInfo getAll() {
         HashMap<String, Object> map = Maps.newHashMap();
-        Page page = userService.findAll();
-        map.put("pageSize", page.getPageSize());
-        map.put("total", page.getTotal());
-        map.put("pageNum", page.getPageNum());
-        map.put("pages", page.getPages());
-        map.put("result", page.getResult());
-        return map;
+        PageInfo page = userService.findAll();
+
+        return page;
     }
 
     @RequestMapping("null")
