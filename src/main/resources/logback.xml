@@ -40,7 +40,7 @@
         <appender-ref ref="STDOUT"/>
     </appender>
 
-    <logger name="com.feng.web" level="info" additivity="false">
+    <logger name="com.feng.web" level="debug" additivity="false">
         <appender-ref ref="ASYNC"/>
     </logger>
 
