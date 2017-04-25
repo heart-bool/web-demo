@@ -5,34 +5,20 @@
 spring:
   # 数据源配置
   datasource:
-    apis:
-      driver-class-name: "com.mysql.jdbc.Driver"
-      url: "jdbc:mysql://localhost/demo?useUnicode=true&characterEncoding=utf8&useNewIO=true"
-      username: "root"
-      password: "123456"
-      # HikariCP属性配置
-      hikari:
-        maximumPoolSize: 20
-        minimumIdle: 10
-        connectionTimeout: 30000
-        idleTimeout: 600000
-        maxLifetime: 1800000
-        connectionTestQuery: "select 1"
-        connectionInitSql: "set names utf8mb4"
-    user:
-      driver-class-name: "com.mysql.jdbc.Driver"
-        url: "jdbc:mysql://localhost/demo1?useUnicode=true&characterEncoding=utf8&useNewIO=true"
-        username: "root"
-        password: "123456"
-       # HikariCP属性配置
-        hikari:
-          maximumPoolSize: 20
-          minimumIdle: 10
-          connectionTimeout: 30000
-          idleTimeout: 600000
-          maxLifetime: 1800000
-          connectionTestQuery: "select 1"
-          connectionInitSql: "set names utf8mb4"
+    driver-class-name: "com.mysql.jdbc.Driver"
+    url: "jdbc:mysql://localhost/demo?useUnicode=true&characterEncoding=utf8&useNewIO=true"
+    username: "root"
+    password: "123456"
+
+    # HikariCP属性配置
+    hikari:
+      maximumPoolSize: 20
+      minimumIdle: 10
+      connectionTimeout: 30000
+      idleTimeout: 600000
+      maxLifetime: 1800000
+      connectionTestQuery: "select 1"
+      connectionInitSql: "set names utf8mb4"
  # Http配置
   http:
     encoding:

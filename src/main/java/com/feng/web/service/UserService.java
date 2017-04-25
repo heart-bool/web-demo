@@ -1,6 +1,6 @@
 package com.feng.web.service;
 
-import com.feng.web.domain.user.User;
+import com.feng.web.domain.User;
 import com.feng.web.mapper.user.UserMapper;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -12,6 +12,11 @@ import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by Administrator on 2017/3/11.
@@ -23,11 +28,30 @@ public class UserService {
     private UserMapper userMapper;
 
     public void insertUser() {
-        User user = new User();
-        user.setName("zhangsan");
-        user.setAge(33);
-        user.setCreatedAt(DateTime.now());
-        userMapper.insert(user);
+
+        ExecutorService service = Executors.newFixedThreadPool(10);
+        AtomicInteger incr = new AtomicInteger(0);
+
+
+        incr.incrementAndGet();
+        service.execute(new Runnable() {
+            boolean is = true;
+
+            @Override
+            public void run() {
+                while (is) {
+                    User user = new User();
+                    user.setName("zhangsan");
+                    user.setAge(33);
+                    user.setCreatedAt(DateTime.now());
+                    userMapper.insert(user);
+                    if (incr.incrementAndGet() == 100000) {
+                        is = false;
+                    }
+                }
+            }
+        });
+
     }
 
     public PageInfo<List<User>> findAll() {

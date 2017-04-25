@@ -35,7 +35,6 @@ public class UserController {
     @RequestMapping("all")
     @ResponseBody
     public PageInfo getAll() {
-        HashMap<String, Object> map = Maps.newHashMap();
         PageInfo page = userService.findAll();
 
         return page;
