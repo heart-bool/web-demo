@@ -1,6 +1,6 @@
 package com.feng.web.service;
 
-import com.feng.web.domain.User;
+import com.feng.web.domain.user.User;
 import com.feng.web.mapper.user.UserMapper;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -12,8 +12,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
