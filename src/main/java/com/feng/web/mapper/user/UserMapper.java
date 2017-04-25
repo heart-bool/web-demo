@@ -1,6 +1,6 @@
 package com.feng.web.mapper.user;
 
-import com.feng.web.domain.User;
+import com.feng.web.domain.user.User;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

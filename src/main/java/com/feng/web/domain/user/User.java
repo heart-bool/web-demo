@@ -1,4 +1,4 @@
-package com.feng.web.domain;
+package com.feng.web.domain.user;
 
 import org.joda.time.DateTime;
 
